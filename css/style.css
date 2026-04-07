@@ -67,3 +67,25 @@ body {
   border: 1px rgb(181, 180, 180) solid;
   border-radius: 10px;
 }
+
+/* ------------------------------------------------------ */
+.step {
+  display: none;
+}
+.step.active {
+  display: block;
+}
+
+.progress-bar {
+  width: 100%;
+}
+.segment {
+  flex-grow: 1;
+  height: 4px;
+  background-color: #DEE2E7;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+.segment.active {
+  background-color: black;
+}

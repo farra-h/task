@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Unit Flow</title>
+    <link rel="stylesheet" href="/css/bootstrap-icons.css" />
+    <link rel="stylesheet" href="/css/bootstrap.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+
+    <style>
+      .steps-container {
+        position: relative;
+        padding-left: 0px;
+      }
+
+      .steps-container::before {
+        content: "";
+        position: absolute;
+        left: 31px;
+        top: 20px;
+        bottom: 50px;
+        border-left: 1px dashed #ccc;
+        z-index: 0;
+      }
+
+      .step-item {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        gap: 20px;
+        margin-bottom: 35px;
+        align-items: flex-start;
+      }
+
+      .step-icon {
+        width: 44px;
+        height: 44px;
+        background: white;
+        border: 1px solid #e5e7eb;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        color: #666;
+      }
+      .step-icon i {
+        background-color: transparent;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container py-4">
+      <div class="d-flex justify-content-between align-items-center mb-5">
+        <div class="logo">
+          <img src="/assetes/imgg.jpeg" alt="Logo" height="40" />
+        </div>
+
+        <div class="d-flex align-items-center gap-3">
+          <span class="text-black">Switch to guest</span>
+          <div class="border border-1 border-black py-1 px-2 round cursor-pointer shadow-sm">
+            <i class="bi bi-list me-2"></i>
+            <i class="bi bi-person-circle"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-5" style="max-width: 800px">
+        <h2 class="fw-bold" style="color: #0f1c35">Verification process</h2>
+        <p class="text-muted fs-6">
+          Verification helps keep our community safe and trusted. It only takes
+          a few minutes.
+        </p>
+      </div>
+
+      <div class="steps-container mb-5">
+        <div class="step-item">
+          <div class="step-icon"><i class="bi bi-card-image"></i></div>
+          <div>
+            <h6 class="fw-bold mb-1">Upload ID</h6>
+            <p class="text-muted mb-0">
+              Provide a clear photo of your National ID, Passport, or Driver's
+              License.
+            </p>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-icon"><i class="bi bi-camera"></i></div>
+          <div>
+            <h6 class="fw-bold mb-1">Take a selfie</h6>
+            <p class="text-muted mb-0">
+              We'll use a quick face scan to confirm that you are the owner of
+              the document.
+            </p>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-icon"><i class="bi bi-clipboard-check"></i></div>
+          <div>
+            <h6 class="fw-bold mb-1">Review</h6>
+            <p class="text-muted mb-0">
+              Check your information and submit for a final automated
+              verification.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="alert alert-primary border-1 d-flex gap-3 align-items-start"
+        style="
+          background-color: #f0f7ff;
+          color: #3b82f6;
+          border-radius: 12px;
+          max-width: 500px;
+        "
+      >
+        <i class="bi bi-shield-check fs-5"></i>
+        <p class="mb-0" style="font-size: 14px">
+          Your information is <strong>secure and encrypted.</strong> We only use
+          this data to confirm your identity for safety purposes.
+        </p>
+      </div>
+
+      <div class="d-flex justify-content-between align-items-center mt-5">
+        <button class="btn back-btn">Back</button>
+        <button class="btn continue-btn">continue</button>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verification steps</title>
+    <link rel="stylesheet" href="/css/bootstrap-icons.css" />
+    <link rel="stylesheet" href="/css/bootstrap.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/add-unit.css" />
+  </head>
+  <body>
+    <div class="container py-5">
+      <!-- Progress -->
+      <div
+        class="progress-segments mb-4 d-flex justify-content-between gap-2"
+        id="progress-container"
+      >
+        <div class="segment active"></div>
+        <div class="segment"></div>
+        <div class="segment"></div>
+        <div class="segment"></div>
+      </div>
+
+      <div>
+        <div class="step active" id="step-1">
+          <p class="text-secondary mb-2 fw-medium" style="font-size: 14px">
+            Step 1 of 4
+          </p>
+          <h2 class="mb-2 fw-bold">Select Document Type</h2>
+          <p class="text-secondary mb-5 fs-5">
+            Choose the document you'd like to use for identity verification.
+          </p>
+
+          <div class="mx-auto" style="max-width: 550px">
+            <div class="policy-list">
+              <div class="policy-wrapper mb-3">
+                <input
+                  type="radio"
+                  id="policy-id"
+                  name="id_type"
+                  class="policy-radio-input"
+                  checked
+                />
+                <label
+                  for="policy-id"
+                  class="policy-card d-flex align-items-center justify-content-between"
+                >
+                  <div class="d-flex align-items-center gap-3">
+                    <i class="bi bi-person-vcard fs-5"></i>
+                    <span class="fw-bold">National ID</span>
+                  </div>
+                  <div class="radio-circle"></div>
+                </label>
+              </div>
+
+              <div class="policy-wrapper mb-3">
+                <input
+                  type="radio"
+                  id="policy-passport"
+                  name="id_type"
+                  class="policy-radio-input"
+                />
+                <label
+                  for="policy-passport"
+                  class="policy-card d-flex align-items-center justify-content-between"
+                >
+                  <div class="d-flex align-items-center gap-3">
+                    <i class="bi bi-book fs-5"></i>
+                    <span class="fw-bold">Passport</span>
+                  </div>
+                  <div class="radio-circle"></div>
+                </label>
+              </div>
+
+              <div class="policy-wrapper mb-3">
+                <input
+                  type="radio"
+                  id="policy-license"
+                  name="id_type"
+                  class="policy-radio-input"
+                />
+                <label
+                  for="policy-license"
+                  class="policy-card d-flex align-items-center justify-content-between"
+                >
+                  <div class="d-flex align-items-center gap-3">
+                    <i class="bi bi-car-front fs-5"></i>
+                    <span class="fw-bold">Driver's License</span>
+                  </div>
+                  <div class="radio-circle"></div>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="step" id="step-2">
+          <p class="text-secondary mb-2 fw-medium" style="font-size: 14px">
+            Step 2 of 4
+          </p>
+          <h2 class="mb-2 fw-bold">Upload Your national ID</h2>
+          <p class="text-secondary mb-5 fs-5">
+            Take a clear photo of your document. Ensure all four corners are
+            visible and there is no glare.
+          </p>
+
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <h5 class="fw-bold mb-3 fs-6">Frontside</h5>
+
+              <div
+                class="video-upload-container"
+                style="border: 3px rgb(195, 194, 194) dotted"
+              >
+                <div class="video-placeholder">
+                  <i
+                    class="bi bi-camera fs-2 mb-3 p-2 bg-white rounded-circle"
+                  ></i>
+                  <p class="mb-0 fw-bold text-black">Drag & Drop of browser</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <h5 class="fw-bold mb-3 fs-6">Backside</h5>
+
+              <div
+                class="video-upload-container"
+                style="border: 3px rgb(195, 194, 194) dotted"
+              >
+                <div class="video-placeholder">
+                  <i
+                    class="bi bi-camera fs-2 mb-3 p-2 bg-white rounded-circle"
+                  ></i>
+                  <p class="mb-0 fw-bold text-black">Drag & Drop of browser</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="alert alert-primary border-1 d-flex gap-3 align-items-start mt-4"
+            style="
+              background-color: #f0f7ff;
+              color: #3b82f6;
+              border-radius: 12px;
+              max-width: 500px;
+            "
+          >
+            <i class="bi bi-shield-check fs-5"></i>
+            <p class="mb-0 fw-bold" style="font-size: 14px">
+              YOUR DATA IS SECURE & ENCRYPTED
+            </p>
+          </div>
+        </div>
+
+        <div class="step" id="step-3">
+          <p class="text-secondary mb-2 fw-medium" style="font-size: 14px">
+            Step 3 of 4
+          </p>
+          <h2 class="mb-2 fw-bold">Take your selfie</h2>
+          <p class="text-secondary mb-5 fs-5">
+            Position your face within the oval guide
+          </p>
+
+        </div>
+
+        <div class="step" id="step-4">
+          <p class="text-secondary mb-2 fw-medium" style="font-size: 14px">
+            Step 4 of 4
+          </p>
+          <h2 class="mb-2 fw-bold">Review your details</h2>
+          <p class="text-secondary mb-5 fs-5">
+            Ensure all details are sharp and clearly visible. This helps avoid
+            verification delays.
+          </p>
+
+          <div class="row">
+            <div class="col-12 col-md-6 mt-3">
+              <h5 class="fw-bold mb-3 fs-6">Frontside</h5>
+
+              <div
+                class="video-upload-container"
+                style="border: 3px rgb(195, 194, 194) dotted"
+              >
+                <div class="video-placeholder">
+                  <i
+                    class="bi bi-camera fs-2 mb-3 p-2 bg-white rounded-circle"
+                  ></i>
+                  <p class="mb-0 fw-bold text-black">Drag & Drop of browser</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6 mt-3">
+              <h5 class="fw-bold mb-3 fs-6">Backside</h5>
+
+              <div
+                class="video-upload-container"
+                style="border: 3px rgb(195, 194, 194) dotted"
+              >
+                <div class="video-placeholder">
+                  <i
+                    class="bi bi-camera fs-2 mb-3 p-2 bg-white rounded-circle"
+                  ></i>
+                  <p class="mb-0 fw-bold text-black">Drag & Drop of browser</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6 mt-3">
+              <h5 class="fw-bold mb-3 fs-6">Your selfie</h5>
+
+              <div
+                class="video-upload-container"
+                style="border: 3px rgb(195, 194, 194) dotted"
+              >
+                <div class="video-placeholder">
+                  <i
+                    class="bi bi-camera fs-2 mb-3 p-2 bg-white rounded-circle"
+                  ></i>
+                  <p class="mb-0 fw-bold text-black">Drag & Drop of browser</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Buttons -->
+      <div
+        class="d-flex flex-column-reverse gap-2 flex-md-row justify-content-between mt-5"
+      >
+        <button class="btn back-btn" onclick="prevStepVer()">Back</button>
+        <button class="btn continue-btn" onclick="nextStepVer()">
+          Continue
+        </button>
+      </div>
+    </div>
+    <script src="/js/verfication.js"></script>
+    <script src="/js/main.js"></script>
+  </body>
+</html>
