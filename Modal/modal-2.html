@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modal-2</title>
+    <link rel="stylesheet" href="/css/bootstrap-icons.css" />
+    <link rel="stylesheet" href="/css/bootstrap.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <style>
+      body {
+        background-color: #666;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+      
+      .success-card {
+        background: white;
+        padding: 60px 40px;
+        border-radius: 20px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        width: 100%;
+        max-width: 600px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="success-card">
+      <h6 class="fw-bold mb-4" style="color: #111;">Are you sure you want to exit?</h6>
+
+      <div class="d-flex gap-2 mt-5">
+        <button class="btn back-btn" style="flex: 1; padding: 12px;">Save & Exit</button>
+        <button class="btn continue-btn" style="flex: 1; padding: 12px;">Keep working</button>
+      </div>
+    </div>
+
+  </body>
+</html>
