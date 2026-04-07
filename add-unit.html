@@ -1,11 +1,836 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add unit steps</title>
+    <link rel="stylesheet" href="css/bootstrap-icons.css" />
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/add-unit.css" />
+  </head>
+  <body>
+    <div class="container py-5">
+      <!-- Header -->
+      <div class="d-flex justify-content-between align-items-center mb-5">
+        <div class="logo"><img src="/assetes/imgg.jpeg" alt="" /></div>
+
+        <div class="d-flex align-items-center gap-3">
+          <span class="text-black">Switch to guest</span>
+          <div
+            class="border border-1 border-black py-1 px-2 round cursor-pointer shadow-sm"
+          >
+            <i class="bi bi-list me-2"></i>
+            <i class="bi bi-person-circle"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid px-4 text-end mb-3">
+        <a
+          href="#"
+          class="text-secondary text-decoration-underline fw-medium"
+          style="font-size: 14px"
+          >Save & Exit</a
+        >
+      </div>
+
+      <!-- Progress -->
+      <div
+        class="progress-segments mb-4 d-flex justify-content-between gap-2"
+        id="progress-container"
+      >
+        <div class="segment active"></div>
+        <div class="segment"></div>
+        <div class="segment"></div>
+        <div class="segment"></div>
+        <div class="segment"></div>
+        <div class="segment"></div>
+        <div class="segment"></div>
+        <div class="segment"></div>
+        <div class="segment"></div>
+      </div>
+
+      <div>
+        <div class="step active" id="step-1">
+          <p class="text-secondary mb-2 fw-medium" style="font-size: 14px">
+            Step 1 of 9
+          </p>
+          <h2 class="mb-2 fw-bold">What kind of places you will be hosting?</h2>
+          <p class="text-secondary mb-5 fs-5">
+            Choose the category that best describes your property.
+          </p>
+
+          <div class="mx-auto" style="max-width: 550px">
+            <div class="row g-3 mb-5">
+              <div class="col-6">
+                <div class="option-card active" onclick="Option(this)">
+                  <i class="bi bi-building"></i>
+                  <p>Apartment</p>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="option-card" onclick="selectOption(this)">
+                  <i class="bi bi-house"></i>
+                  <p>House</p>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="option-card" onclick="selectOption(this)">
+                  <i class="bi bi-bank"></i>
+                  <p>Villa</p>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="option-card" onclick="selectOption(this)">
+                  <i class="bi bi-door-open"></i>
+                  <p>Studio</p>
+                </div>
+              </div>
+              <div class="col-12">
+                <div
+                  class="option-card d-flex flex-row align-items-center justify-content-start gap-2 py-3"
+                  onclick="selectOption(this)"
+                >
+                  <i class="bi bi-grid fs-5 mb-0 ms-3"></i>
+                  <p class="mb-0">Other Property Types</p>
+                </div>
+              </div>
+            </div>
+
+            <h5 class="fw-bold mb-3 fs-6">Rental Type</h5>
+
+            <div class="rental-card" onclick="selectRental(this)">
+              <div
+                class="rounded-circle d-flex align-items-center justify-content-center me-3"
+                style="width: 40px; height: 40px"
+              >
+                🏖️
+              </div>
+              <div class="flex-grow-1">
+                <h6 class="mb-0 fw-bold fs-6">Short-term</h6>
+                <small class="text-secondary">1 – 30 night</small>
+              </div>
+              <div class="check-circle">
+                <i class="bi bi-check"></i>
+              </div>
+            </div>
+
+            <div class="rental-card active" onclick="selectRental(this)">
+              <div
+                class="rounded-circle d-flex align-items-center justify-content-center me-3"
+                style="width: 40px; height: 40px"
+              >
+                🏡
+              </div>
+              <div class="flex-grow-1">
+                <h6 class="mb-0 fw-bold fs-6">Long-term</h6>
+                <small class="text-secondary">30 days – 1 year+</small>
+              </div>
+              <div class="check-circle">
+                <i class="bi bi-check"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="step" id="step-2">
+          <p class="text-secondary mb-2 fw-medium" style="font-size: 14px">
+            Step 2 of 9
+          </p>
+          <h2 class="mb-2 fw-bold">Where is your place located?</h2>
+          <p class="text-secondary mb-5 fs-5">
+            Your address is only shared with guests after they book.
+          </p>
+
+          <div class="mx-auto" style="max-width: 550px">
+            <div class="mb-4">
+              <label class="form-label fw-bold">Country/Region</label>
+              <select class="form-select custom-input">
+                <option selected>Egypt</option>
+                <option value="1">US</option>
+                <option value="2">UK</option>
+                <option value="3">Japan</option>
+              </select>
+            </div>
+
+            <div class="mb-4">
+              <label class="form-label fw-bold">City</label>
+              <select class="form-select custom-input">
+                <option selected>Cairo</option>
+                <option value="1">Alexandria</option>
+                <option value="2">Giza</option>
+                <option value="3">Sharqia</option>
+              </select>
+            </div>
+
+            <div class="mb-4">
+              <label class="form-label fw-bold">Address</label>
+              <input
+                type="text"
+                class="form-control custom-input"
+                placeholder="Ahmedorabi street"
+              />
+            </div>
+
+            <div class="mb-4">
+              <a
+                href="#"
+                class="text-black text-decoration-none fw-bold d-flex align-items-center gap-2"
+                style="font-size: 14px"
+              >
+                <i class="bi bi-crosshair"></i> Use my current location
+              </a>
+            </div>
+
+            <div class="mb-4">
+              <div class="d-flex justify-content-between align-items-end mb-2">
+                <label class="form-label fw-bold mb-0">Confirm location</label>
+                <span class="text-secondary fs-6">Drag the map to adjust</span>
+              </div>
+
+              <div
+                class="map-container position-relative overflow-hidden mt-4"
+                style="
+                  height: 220px;
+                  background-color: #e5e7eb;
+                  border-radius: 15px;
+                "
+              >
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13739.664101102271!2d31.482535950000006!3d30.579915899999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1775516545296!5m2!1sen!2seg"
+                  width="600"
+                  height="450"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+
+                <div class="position-absolute top-50 start-50 translate-middle">
+                  <div class="map-pin shadow-lg">
+                    <div class="pin-inner"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="step" id="step-3">
+          <p class="text-secondary mb-2 fw-medium" style="font-size: 14px">
+            Step 3 of 9
+          </p>
+          <h2 class="mb-2 fw-bold">Tell us about your place</h2>
+          <p class="text-secondary mb-5 fs-5">
+            Help guests understand the capacity and layout of your property.
+          </p>
+
+          <div class="mx-auto" style="max-width: 550px">
+            <div
+              class="d-flex align-items-center justify-content-between py-3 border-bottom"
+            >
+              <div class="d-flex align-items-center gap-3">
+                <div
+                  class="icon-box d-flex align-items-center justify-content-center"
+                  style="width: 40px; height: 40px"
+                >
+                  <i class="bi bi-door-closed"></i>
+                </div>
+                <span class="fw-bold">Bedrooms</span>
+              </div>
+
+              <div class="d-flex align-items-center gap-3">
+                <button
+                  class="btn btn-counter"
+                  onclick="changeCount('bedrooms', -1)"
+                >
+                  <i class="bi bi-dash"></i>
+                </button>
+                <span id="bedrooms-val" class="fw-bold fs-5">2</span>
+                <button
+                  class="btn btn-counter"
+                  onclick="changeCount('bedrooms', 1)"
+                >
+                  <i class="bi bi-plus"></i>
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="counter-row d-flex align-items-center justify-content-between py-3 border-bottom"
+            >
+              <div class="d-flex align-items-center gap-3">
+                <div
+                  class="icon-box d-flex align-items-center justify-content-center"
+                  style="width: 40px; height: 40px"
+                >
+                  <i class="bi bi-droplet"></i>
+                </div>
+                <span class="fw-bold">Bathrooms</span>
+              </div>
+              <div class="d-flex align-items-center gap-3">
+                <button
+                  class="btn btn-counter"
+                  onclick="changeCount('bathrooms', -1)"
+                >
+                  <i class="bi bi-dash"></i>
+                </button>
+                <span id="bathrooms-val" class="fw-bold fs-5">2</span>
+                <button
+                  class="btn btn-counter"
+                  onclick="changeCount('bathrooms', 1)"
+                >
+                  <i class="bi bi-plus"></i>
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="counter-row d-flex align-items-center justify-content-between py-3 border-bottom"
+            >
+              <div class="d-flex align-items-center gap-3">
+                <div
+                  class="icon-box d-flex align-items-center justify-content-center"
+                  style="width: 40px; height: 40px"
+                >
+                  <i class="bi bi-people"></i>
+                </div>
+                <span class="fw-bold">Max Guests</span>
+              </div>
+              <div class="d-flex align-items-center gap-3">
+                <button
+                  class="btn btn-counter"
+                  onclick="changeCount('guests', -1)"
+                >
+                  <i class="bi bi-dash"></i>
+                </button>
+                <span id="guests-val" class="fw-bold fs-5">2</span>
+                <button
+                  class="btn btn-counter"
+                  onclick="changeCount('guests', 1)"
+                >
+                  <i class="bi bi-plus"></i>
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="counter-row d-flex align-items-center justify-content-between py-3 mb-4"
+            >
+              <div class="d-flex align-items-center gap-3">
+                <div
+                  class="icon-box d-flex align-items-center justify-content-center"
+                  style="width: 40px; height: 40px"
+                >
+                  <i class="bi bi-fork-knife"></i>
+                </div>
+                <span class="fw-bold">Kitchens</span>
+              </div>
+              <div class="d-flex align-items-center gap-3">
+                <button
+                  class="btn btn-counter"
+                  onclick="changeCount('kitchens', -1)"
+                >
+                  <i class="bi bi-dash"></i>
+                </button>
+                <span id="kitchens-val" class="fw-bold fs-5">2</span>
+                <button
+                  class="btn btn-counter"
+                  onclick="changeCount('kitchens', 1)"
+                >
+                  <i class="bi bi-plus"></i>
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="alert alert-primary border-0 d-flex gap-3 align-items-start"
+              style="
+                background-color: #f0f7ff;
+                color: #3b82f6;
+                border-radius: 12px;
+              "
+            >
+              <i class="bi bi-info-circle-fill fs-5"></i>
+              <p class="mb-0" style="font-size: 14px">
+                Higher guest capacity often leads to more bookings, but ensure
+                your space can comfortably accommodate everyone.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="step" id="step-4">
+          <p class="text-secondary mb-2 fw-medium" style="font-size: 14px">
+            Step 4 of 9
+          </p>
+          <h2 class="mb-2 fw-bold">What amenities do you offer?</h2>
+          <p class="text-secondary mb-5 fs-5">
+            Guests look for these features when searching for the perfect stay.
+          </p>
+
+          <div class="mx-auto" style="max-width: 550px">
+            <h5 class="fw-bold mb-3 fs-6">Basic Amenities</h5>
+            <div class="row g-3 mb-5">
+              <div class="col-5">
+                <div
+                  class="option-card active text-start ms-3"
+                  onclick="selectOption(this)"
+                >
+                  <i class="bi bi-wifi"></i>
+                  <p>Wifi</p>
+                </div>
+              </div>
+              <div class="col-5">
+                <div
+                  class="option-card text-start ms-3"
+                  onclick="selectOption(this)"
+                >
+                  <i class="bi bi-tv"></i>
+                  <p>Tv</p>
+                </div>
+              </div>
+              <div class="col-5">
+                <div
+                  class="option-card text-start ms-3"
+                  onclick="selectOption(this)"
+                >
+                  <i class="bi bi-fork-knife"></i>
+                  <p>Kitchen</p>
+                </div>
+              </div>
+              <div class="col-5">
+                <div
+                  class="option-card text-start ms-3"
+                  onclick="selectOption(this)"
+                >
+                  <i class="bi bi-thermometer-snow"></i>
+                  <p>Air conditioning</p>
+                </div>
+              </div>
+            </div>
+
+            <h5 class="fw-bold mb-3 fs-6">Facilities</h5>
+            <div class="row g-3 mb-5">
+              <div class="col-5">
+                <div
+                  class="option-card active text-start ms-3"
+                  onclick="selectOption(this)"
+                >
+                  <i class="bi bi-car-front"></i>
+                  <p>Free parking</p>
+                </div>
+              </div>
+              <div class="col-5">
+                <div
+                  class="option-card text-start ms-3"
+                  onclick="selectOption(this)"
+                >
+                  <i class="bi bi-list-nested"></i>
+                  <p>Private pool</p>
+                </div>
+              </div>
+              <div class="col-5">
+                <div
+                  class="option-card text-start ms-3"
+                  onclick="selectOption(this)"
+                >
+                  <i class="bi bi-gem"></i>
+                  <p>Fitness center</p>
+                </div>
+              </div>
+              <div class="col-5">
+                <div
+                  class="option-card text-start ms-3"
+                  onclick="selectOption(this)"
+                >
+                  <i class="bi bi-backpack4"></i>
+                  <p>Workspace</p>
+                </div>
+              </div>
+            </div>
+
+            <h5 class="fw-bold mb-3 fs-6">Safety</h5>
+            <div class="row g-3 mb-5">
+              <div class="col-5">
+                <div
+                  class="option-card active text-start ms-3"
+                  onclick="selectOption(this)"
+                >
+                  <i class="bi bi-alarm"></i>
+                  <p>Smoke alarm</p>
+                </div>
+              </div>
+              <div class="col-5">
+                <div
+                  class="option-card text-start ms-3"
+                  onclick="selectOption(this)"
+                >
+                  <i class="bi bi-fire"></i>
+                  <p>Fire Extinguisher</p>
+                </div>
+              </div>
+              <div class="col-5">
+                <div
+                  class="option-card text-start ms-3"
+                  onclick="selectOption(this)"
+                >
+                  <i class="bi bi-bandaid"></i>
+                  <p>First aid kit</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="step" id="step-5">
+          <p class="text-secondary mb-2 fw-medium" style="font-size: 14px">
+            Step 5 of 9
+          </p>
+          <h2 class="mb-2 fw-bold">Add some photos of your place</h2>
+          <p class="text-secondary mb-5 fs-5">
+            Guests love to see the dtails. Upload at least 5 photos to get
+            started.
+          </p>
+
+          <div class="row mb-4">
+            <div class="col-6">
+              <h5 class="fw-bold mb-3 fs-6">Photos (4 of 30)</h5>
+
+              <div class="photo-grid-layout">
+                <div class="photo-item main-photo">
+                  <span class="badge-cover">COVER</span>
+                  <button class="btn-delete">
+                    <i class="bi bi-trash"></i>
+                  </button>
+                  <img
+                    src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=400&q=80"
+                    alt="Living Room"
+                  />
+                </div>
+
+                <div class="side-photos">
+                  <div class="photo-item side-photo">
+                    <button class="btn-delete">
+                      <i class="bi bi-trash"></i>
+                    </button>
+                    <img
+                      src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=200&q=80"
+                      alt="Bedroom"
+                    />
+                  </div>
+                  <div class="photo-item side-photo">
+                    <button class="btn-delete">
+                      <i class="bi bi-trash"></i>
+                    </button>
+                    <img
+                      src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=200&q=80"
+                      alt="Kitchen"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="add-photo-box">
+                <i class="bi bi-plus fs-2"></i>
+              </div>
+            </div>
+
+            <div class="col-6">
+              <div class="d-flex justify-content-between">
+                <h5 class="fw-bold mb-3 fs-6">Videos (Optional)</h5>
+                <h5 class="fw-bold text-muted mb-3 fs-6">Max 2 videos</h5>
+              </div>
+
+              <div class="video-upload-container">
+                <div class="video-placeholder">
+                  <i class="bi bi-camera-video fs-2 mb-2"></i>
+                  <p class="mb-0 fw-medium">Add Video</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="step" id="step-6">
+          <p class="text-secondary mb-2 fw-medium" style="font-size: 14px">
+            Step 6 of 9
+          </p>
+          <h2 class="mb-2 fw-bold">Create your description</h2>
+          <p class="text-secondary mb-5 fs-5">
+            Share what makes your place special and attract the right guests.
+          </p>
+
+          <div class="mx-auto" style="max-width: 550px">
+            <div class="mb-4">
+              <label class="form-label fw-bold">Listing Title (0-50)</label>
+              <input
+                type="text"
+                class="form-control custom-input"
+                placeholder="Modern Studio in downtown"
+              />
+              <p class="text-muted mt-2" style="font-size: 12px">
+                Short, catchy titles perform best in search results.
+              </p>
+            </div>
+            <div class="mb-4">
+              <label class="form-label fw-bold">Description (0-500)</label>
+              <textarea
+                class="form-control custom-input"
+                style="min-height: 280px"
+                placeholder="Tell guests about your place, the neighborhood, and why they'll love staying here..."
+              ></textarea>
+            </div>
+            <div
+              class="alert alert-primary border-1 d-flex gap-3 align-items-start"
+              style="
+                background-color: #f0f7ff;
+                color: #3b82f6;
+                border-radius: 12px;
+              "
+            >
+              <i class="bi bi-info-circle-fill fs-5"></i>
+              <p class="mb-0" style="font-size: 14px">
+                Highlight unique features like a great view, local coffee shops
+                nearby, or a super comfortable bed.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="step" id="step-7">
+          <p class="text-secondary mb-2 fw-medium" style="font-size: 14px">
+            Step 7 of 9
+          </p>
+          <h2 class="mb-2 fw-bold">Now, set your price</h2>
+          <p class="text-secondary mb-5 fs-5">
+            You can change it at any time. Competitive pricing helps you get
+            booked faster.
+          </p>
+
+          <div class="mx-auto" style="max-width: 550px">
+            <div class="mb-4">
+              <label class="form-label fw-bold">Price per night</label>
+              <input
+                type="text"
+                class="form-control custom-input"
+                placeholder="100 $"
+              />
+            </div>
+            <div class="mb-4">
+              <label class="form-label fw-bold"
+                >Price per night
+                <span class="small-text">( Weekend )</span></label
+              >
+              <input
+                type="text"
+                class="form-control custom-input"
+                placeholder="150 $"
+              />
+            </div>
+            <div class="mb-4">
+              <label class="form-label fw-bold"
+                >Cleaning fee
+                <span class="small-text">( One time )</span></label
+              >
+              <input
+                type="text"
+                class="form-control custom-input"
+                placeholder="Modern Studio in downtown"
+              />
+            </div>
+            <div
+              class="alert alert-primary border-1 d-flex gap-3 align-items-start justify-items-center"
+              style="
+                background-color: #f0f7ff;
+                color: #216eea;
+                border-radius: 12px;
+              "
+            >
+              <i class="bi bi-info-circle-fill fs-5"></i>
+              <p class="mb-0 fw-bolder" style="font-size: 14px">
+                Your earnings per night after platform fees 138 $
+              </p>
+            </div>
+            <div>
+              <div class="d-flex justify-content-between align-items-center">
+                <h5 class="fw-bold my-3 fs-5">Price Breakdown</h5>
+                <h5 class="my-3 fs-6 text-muted">per night</h5>
+              </div>
+              <div
+                style="
+                  border: 1px solid #e5e7eb;
+                  border-radius: 16px;
+                  padding: 20px;
+                "
+                class="price-breakdown shadow-sm"
+              >
+                <div class="d-flex justify-content-between mb-3 text-secondary">
+                  <span>Base price</span>
+                  <span class="fw-bold text-black">$120.00</span>
+                </div>
+
+                <div class="d-flex justify-content-between mb-3 text-secondary">
+                  <span>Cleaning fee</span>
+                  <span class="fw-bold text-black">$25.00</span>
+                </div>
+
+                <div class="d-flex justify-content-between mb-3 text-secondary">
+                  <span>Tax (14%)</span>
+                  <span class="fw-bold text-black">$16.80</span>
+                </div>
+
+                <div class="d-flex justify-content-between mb-4 text-secondary">
+                  <span>Platform service fee</span>
+                  <span class="fw-bold text-black">$4.35</span>
+                </div>
+
+                <div class="dotted-divider mb-4"></div>
+
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="fw-bold fs-5">Guest pays</span>
+                  <span class="fw-bold fs-4">166.15$</span>
+                </div>
+              </div>
+
+              <div
+                class="alert mt-3 alert-primary border-1 d-flex gap-3 align-items-start justify-items-center"
+                style="
+                  background-color: #f0f7ff;
+                  color: #216eea;
+                  border-radius: 12px;
+                "
+              >
+                <i class="bi bi-info-circle-fill fs-5"></i>
+                <p class="mb-0" style="font-size: 14px; max-width: 400px">
+                  <strong>14% Tax</strong> is a mandatory government VAT applied
+                  to all bookings. This is collected from guests and remitted to
+                  authorities.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="step" id="step-8">
+          <p class="text-secondary mb-2 fw-medium" style="font-size: 14px">
+            Step 8 of 9
+          </p>
+          <h2 class="mb-2 fw-bold">When is your place available?</h2>
+          <p class="text-secondary mb-5 fs-5">
+            Select the dates you'd like to open for bookings. You can always
+            change this later.
+          </p>
+
+          <div class="mx-auto" style="max-width: 550px">
+            
+          </div>
+        </div>
+
+        <div class="step" id="step-9">
+          <p class="text-secondary mb-2 fw-medium" style="font-size: 14px">
+            Step 9 of 9
+          </p>
+          <h2 class="mb-2 fw-bold">Choose a cancellation policy</h2>
+          <p class="text-secondary mb-5 fs-5">
+            This determines how much guests are refunded if they cancel and how
+            much you'll be paid.
+          </p>
+
+          <div class="mx-auto" style="max-width: 550px">
+            <div class="policy-list">
+              <div class="policy-wrapper mb-3">
+                <input
+                  type="radio"
+                  name="cancel_policy"
+                  id="policy-moderate"
+                  class="policy-radio-input"
+                  checked
+                />
+                <label for="policy-moderate" class="policy-card mb-0">
+                  <div class="radio-circle"></div>
+                  <div class="policy-content">
+                    <div class="d-flex align-items-center gap-2 mb-1">
+                      <h6 class="fw-bold mb-0 text-navy">Moderate</h6>
+                      <span class="badge-recommended">RECOMMENDED</span>
+                    </div>
+                    <p class="mb-0 text-muted small">
+                      Full refund 5 days before arrival. This protects your
+                      earnings while remaining attractive to potential guests.
+                    </p>
+                  </div>
+                </label>
+              </div>
+
+              <div class="policy-wrapper mb-3">
+                <input
+                  type="radio"
+                  name="cancel_policy"
+                  id="policy-flexible"
+                  class="policy-radio-input"
+                />
+                <label for="policy-flexible" class="policy-card mb-0">
+                  <div class="radio-circle"></div>
+                  <div class="policy-content">
+                    <h6 class="fw-bold mb-1 text-navy">Flexible</h6>
+                    <p class="mb-0 text-muted small">
+                      Full refund 1 day before arrival. If a guest cancels less
+                      than 24 hours before check-in, you won't receive a payout
+                      for the first night.
+                    </p>
+                  </div>
+                </label>
+              </div>
+
+              <div class="policy-wrapper mb-3">
+                <input
+                  type="radio"
+                  name="cancel_policy"
+                  id="policy-non-refundable"
+                  class="policy-radio-input"
+                />
+                <label for="policy-non-refundable" class="policy-card mb-0">
+                  <div class="radio-circle"></div>
+                  <div class="policy-content">
+                    <h6 class="fw-bold mb-1 text-navy">Strict</h6>
+                    <p class="mb-0 text-muted small">
+                      No refund for any cancellation. Offers the highest protection for your income but may result in fewer bookings.
+                    </p>
+                  </div>
+                </label>
+              </div>
+
+              <div class="policy-wrapper mb-3">
+                <input
+                  type="radio"
+                  name="cancel_policy"
+                  id="policy-strict"
+                  class="policy-radio-input"
+                />
+                <label for="policy-strict" class="policy-card mb-0">
+                  <div class="radio-circle"></div>
+                  <div class="policy-content">
+                    <h6 class="fw-bold mb-1 text-navy">Strict</h6>
+                    <p class="mb-0 text-muted small">
+                      Full refund within 48 hours of booking. Designed for
+                      high-demand areas to ensure your calendar stays reliable.
+                    </p>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Buttons -->
+      <div
+        class="d-flex flex-column-reverse gap-2 flex-md-row justify-content-between mt-5"
+      >
+        <button class="btn back-btn" onclick="prevStep()">Back</button>
+        <button class="btn continue-btn" onclick="nextStep()">Continue</button>
+      </div>
+    </div>
+    <script src="/js/main.js"></script>
+  </body>
 </html>
